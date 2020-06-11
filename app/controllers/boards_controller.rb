@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :set_target_board, only: %i[show edit update destroy]
 
   def index
     @boards = Board.all
@@ -14,24 +15,20 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
   end
 
   #editとshowは共通する
   def edit
-    @board = Board.find(params[:id])
   end
 
   def update
-    board = Board.find(params[:id])  #アップデート用のviewを作成せず、すぐ一覧へと移動するため@を付けない
-    board.update(board_params) #アップデートの処理
+    @board.update(board_params) #アップデートの処理
     
-    redirect_to board  #リダイレクトの処理
+    redirect_to @board  #リダイレクトの処理
   end
 
   def destroy
-    board = Board.find(params[:id])
-    board.delete
+    @board.delete
 
     redirect_to boards_path
   end
@@ -40,5 +37,9 @@ class BoardsController < ApplicationController
 
   def board_params
      params.require(:board).permit(:name, :title, :body)
+  end
+
+  def set_target_board
+    @board = Board.find(params[:id])
   end
 end

@@ -5,4 +5,4 @@
   </div>
 </div>
 <%= render partial: 'form', locals: { board: @board } %>
-<!-- <%= render partial: 'form' %>でもパーシャルは効くが、こうすると@boardがあることを見落としがちで、誤ってあとからcontrollerの@boardを削除してしまうと、バグになる。それを避けたいから、あえてこの書き方をする。-->
+<!--  render partial: 'form' でもパーシャルは効くが、こうすると@boardがあることを見落としがちで、誤ってあとからcontrollerの@boardを削除してしまうと、バグになる。それを避けたいから、あえてこの書き方をする。-->
