@@ -31,10 +31,16 @@ class BoardsController < ApplicationController
   end
 
   def update
-    @board.update(board_params) #アップデートの処理
-    
-    redirect_to @board  #リダイレクトの処理
+    if @board.update(board_params)
+      redirect_to @board
+    else
+      redirect_to board_path, flash: {
+        board: @board,
+        error_messages: @board.errors.full_messages
+      }
+    end
   end
+
 
   def destroy
     @board.delete
