@@ -23,6 +23,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @comment = @board.comments.new
   end
 
   #editとshowは共通する
