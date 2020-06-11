@@ -1,12 +1,4 @@
-<% if flash[:error_messages] %>
-  <div class="alert alert-danger">
-    <ul>
-      <% flash[:error_messages].each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'shared/error_messages' %>
 
 <!-- このファイルをパーシャルといい、各ページの共通部分をここに書いておき、引っ張ってこれるようにするもの。ファイル名は_始まり。 -->
 <%= form_for board do |f| %>
