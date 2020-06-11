@@ -46,6 +46,7 @@ group :development do
   gem 'pry-byebug'
   gem 'kaminari'
   gem 'rails-i18n'
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
