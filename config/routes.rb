@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
   root 'home#index'
-  resoueces :users, only: %i[new create]
+  resources :users, only: %i[new create]
   resources :boards
   resources :comments, only: %i[create destroy]
 end

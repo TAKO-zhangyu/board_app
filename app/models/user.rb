@@ -13,4 +13,16 @@
 #  index_users_on_name  (name) UNIQUE
 #
 class User < ApplicationRecord
+  has_secure_password  #パスワードを2回書かせる
+
+  validates :name,
+    presence: true,
+    uniqueness: true,
+    length: { maximum: 16 },
+    format: {
+      with: /\A[a-z0-9]+\z/, #正規表現 aからzもしくは0から9で設定しろという内容
+      message: 'は小文字英数字で入力してください'
+    }
+  validates :password,
+    length: { minimum: 8 }
 end
