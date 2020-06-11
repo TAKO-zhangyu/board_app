@@ -5,6 +5,10 @@
   </div>
 </div>
 
+<% if flash[:notice] %>
+  <div class="alert alert-primary"><%= flash[:notice] %></div>
+<% end %>
+
 <%= render @board %>
 <!-- モデルのオブジェクトのページを表示する場合は、このように簡略にできる
 この場合、_boardのパーシャルが使われ、引数のインスタンス変数はboardというローカル変数で渡される。 --> 
