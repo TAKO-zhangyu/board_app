@@ -21,6 +21,14 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
+  def update
+    board = Board.find(params[:id])  #アップデート用のviewを作成せず、すぐ一覧へと移動するため@を付けない
+    board.update(board_params) #アップデートの処理
+    
+    redirect_to board  #リダイレクトの処理
+  end
+
+
   private
 
   def board_params
