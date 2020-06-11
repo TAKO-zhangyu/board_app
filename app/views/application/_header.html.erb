@@ -17,12 +17,15 @@
           ユーザー
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
           <% if @current_user %>
-            <%= link_to 'マイページ', mypage_path, class: 'dropdown-item' %>
-            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item' %>
+            <%= link_to "マイページ", mypage_path, class:"dropdown-item" %>
+            <%= link_to "ログアウト", logout_path, method: :delete, class:"dropdown-item" %>
           <% else %>
-            <%= link_to '登録', new_user_path, class: 'dropdown-item' %>
-            <%= link_to 'ログイン', root_path, class: 'dropdown-item' %>
+            <%= link_to "登録", new_user_path, class:"dropdown-item" %>
+            <%= link_to "ログイン", root_path, class:"dropdown-item" %>
           <% end %>
         </div>
       </li>
