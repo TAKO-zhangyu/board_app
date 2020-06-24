@@ -11,11 +11,11 @@ if Rails.env == 'development'
   end
 
   Tag.create([
-    { name: 'Ruby' },
-    { name: 'Ruby on Rails4' },
-    { name: 'Ruby on Rails5' },
-    { name: 'Python2' },
-    { name: 'Python3' },
-    { name: 'Django2' }
+    { name: '雑談' },
+    { name: 'エンターテイメント' },
+    { name: '悪口' },
+    { name: '生き方' },
+    { name: 'スポーツ' },
+    { name: 'その他' },
   ])
 end
